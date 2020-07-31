@@ -1,0 +1,51 @@
+server:
+  port: 10001
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    prefer-ip-address: true #显示客户端真实ip
+
+spring:
+  application:
+    name: gateway-server
+
+  redis:
+    host: 10.0.12.74
+    port: 6379
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: lb_route
+          predicates:
+            - Path=/lb/**
+          filters:
+            - StripPrefix=1
+          uri: lb://order-service
+        - id: redis_rate_limiter
+          predicates:
+            - Path=/ratelimiter/**
+          filters:
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                keyResolver: '#{@ipAddressKeyResolver}'
+                deny-empty-key: true
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 2
+          uri: lb://order-service
+
+
+
+
+
+
+
