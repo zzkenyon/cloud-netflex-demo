@@ -10,9 +10,9 @@
   <version>1.0</version>
   <modules>
     <module>eureka-server-7001</module>
-    <module>service-user</module>
-    <module>service-order</module>
-      <module>gateway-server-10001</module>
+    <module>service-user-808*</module>
+    <module>service-order-909*</module>
+    <module>gateway-server-10001</module>
   </modules>
   <name>spring-cloud-netflix-demo</name>
 
