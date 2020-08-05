@@ -4,58 +4,22 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.pd</groupId>
-  <artifactId>spring-cloud-netflix-demo</artifactId>
-  <packaging>pom</packaging>
+  <parent>
+    <groupId>com.pd</groupId>
+    <artifactId>pd-mall-goods-service-9080</artifactId>
+    <version>1.0</version>
+  </parent>
+  <artifactId>goods-service-api</artifactId>
   <version>1.0</version>
-  <modules>
-    <module>eureka-server-7001</module>
-    <module>pd-mall-user-service-8080</module>
-    <module>pd-mall-order-service-9090</module>
-    <module>gateway-server-10001</module>
-    <module>config-server-6001</module>
-    <module>pd-mall-goods-service-9080</module>
-    <module>pd-mall-common</module>
-  </modules>
-  <name>spring-cloud-netflix-demo</name>
 
-  <properties>
-    <java.version>1.8</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
-    <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
-  </properties>
+  <name>goods-service-api</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
   </dependencies>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring-cloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

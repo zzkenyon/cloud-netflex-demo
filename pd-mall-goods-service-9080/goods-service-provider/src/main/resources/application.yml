@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: goods-service
+  datasource:
+    url: jdbc:mysql://10.0.12.72:3306/pd_mall?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=UTC
+    password: C!Fr0ShoW9Nu
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 9080
+
+mybatis:
+  type-aliases-package: com.pd.goods.mapper.entitys
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
