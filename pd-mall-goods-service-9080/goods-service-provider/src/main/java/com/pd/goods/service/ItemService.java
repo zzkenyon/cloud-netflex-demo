@@ -47,13 +47,13 @@ public class ItemService implements IItemService{
                     if (item.getNum() < itemStockDo.getNum()) {
                         throw new BizException(itemStockDo.getItemId() + ":库存不足");
                     }
-                }
-                ItemPo record = new ItemPo();
-                record.setId(itemStockDo.getItemId());
-                record.setNum(itemStockDo.getNum());
-                int row = itemMapper.reduction(record);
-                if (row <= 0) {
-                    throw new BizException(itemStockDo.getItemId() + ":库存不足");
+                    ItemPo record = new ItemPo();
+                    record.setId(itemStockDo.getItemId());
+                    record.setNum(item.getNum() - itemStockDo.getNum());
+                    int row = itemMapper.reduction(record);
+                    if (row <= 0) {
+                        throw new BizException(itemStockDo.getItemId() + ":库存不足");
+                    }
                 }
             });
         });

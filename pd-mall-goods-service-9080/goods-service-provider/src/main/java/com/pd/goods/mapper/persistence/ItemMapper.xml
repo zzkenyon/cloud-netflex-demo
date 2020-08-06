@@ -312,6 +312,6 @@
   </select>
 
   <update id="reduction" parameterType="com.pd.goods.mapper.entity.ItemPo">
-    update tb_item set num=num-#{record.num} where id = #{record.id} and num-#{record.num}>0
+    update tb_item set num = #{record.num} where id = #{record.id} and #{record.num}>0
   </update>
 </mapper>
