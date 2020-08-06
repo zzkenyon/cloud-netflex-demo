@@ -3,7 +3,7 @@ package com.pd.goods.mapper.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Item {
+public class ItemPo {
     private Long id;
 
     private String title;

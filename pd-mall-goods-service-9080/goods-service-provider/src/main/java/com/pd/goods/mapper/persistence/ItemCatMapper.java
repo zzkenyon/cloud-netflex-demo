@@ -1,6 +1,6 @@
 package com.pd.goods.mapper.persistence;
 
-import com.pd.goods.mapper.entity.ItemCat;
+import com.pd.goods.mapper.entity.ItemCatPo;
 import com.pd.goods.mapper.entity.ItemCatExample;
 import java.util.List;
 
@@ -15,19 +15,19 @@ public interface ItemCatMapper {
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(ItemCat record);
+    int insert(ItemCatPo record);
 
-    int insertSelective(ItemCat record);
+    int insertSelective(ItemCatPo record);
 
-    List<ItemCat> selectByExample(ItemCatExample example);
+    List<ItemCatPo> selectByExample(ItemCatExample example);
 
-    ItemCat selectByPrimaryKey(Long id);
+    ItemCatPo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") ItemCat record, @Param("example") ItemCatExample example);
+    int updateByExampleSelective(@Param("record") ItemCatPo record, @Param("example") ItemCatExample example);
 
-    int updateByExample(@Param("record") ItemCat record, @Param("example") ItemCatExample example);
+    int updateByExample(@Param("record") ItemCatPo record, @Param("example") ItemCatExample example);
 
-    int updateByPrimaryKeySelective(ItemCat record);
+    int updateByPrimaryKeySelective(ItemCatPo record);
 
-    int updateByPrimaryKey(ItemCat record);
+    int updateByPrimaryKey(ItemCatPo record);
 }

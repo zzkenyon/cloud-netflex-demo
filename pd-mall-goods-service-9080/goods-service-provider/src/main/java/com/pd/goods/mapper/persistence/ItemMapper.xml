@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pd.goods.mapper.persistence.ItemMapper">
-  <resultMap id="BaseResultMap" type="com.pd.goods.mapper.entity.Item">
+  <resultMap id="BaseResultMap" type="com.pd.goods.mapper.entity.ItemPo">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="sell_point" jdbcType="VARCHAR" property="sellPoint" />
@@ -105,7 +105,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.pd.goods.mapper.entity.Item">
+  <insert id="insert" parameterType="com.pd.goods.mapper.entity.ItemPo">
     insert into tb_item (id, title, sell_point, 
       price, num, limit_num, 
       image, cid, status, 
@@ -115,7 +115,7 @@
       #{image,jdbcType=VARCHAR}, #{cid,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, 
       #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.pd.goods.mapper.entity.Item">
+  <insert id="insertSelective" parameterType="com.pd.goods.mapper.entity.ItemPo">
     insert into tb_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -252,7 +252,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pd.goods.mapper.entity.Item">
+  <update id="updateByPrimaryKeySelective" parameterType="com.pd.goods.mapper.entity.ItemPo">
     update tb_item
     <set>
       <if test="title != null">
@@ -288,7 +288,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pd.goods.mapper.entity.Item">
+  <update id="updateByPrimaryKey" parameterType="com.pd.goods.mapper.entity.ItemPo">
     update tb_item
     set title = #{title,jdbcType=VARCHAR},
       sell_point = #{sellPoint,jdbcType=VARCHAR},
@@ -311,7 +311,7 @@
     for update
   </select>
 
-  <update id="decreaseStock" parameterType="com.pd.goods.mapper.entity.Item">
+  <update id="reduction" parameterType="com.pd.goods.mapper.entity.ItemPo">
     update tb_item set num=num-#{record.num} where id = #{record.id} and num-#{record.num}>0
   </update>
 </mapper>

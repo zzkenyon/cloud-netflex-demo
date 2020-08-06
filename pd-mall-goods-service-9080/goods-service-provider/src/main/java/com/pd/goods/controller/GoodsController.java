@@ -1,7 +1,8 @@
 package com.pd.goods.controller;
 
+import com.pd.goods.domian.ItemStockDo;
 import com.pd.goods.dto.ItemDto;
-import com.pd.goods.mapper.entity.Item;
+import com.pd.goods.mapper.entity.ItemPo;
 import com.pd.goods.service.ItemService;
 import com.pd.result.RequestResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,13 @@ public class GoodsController{
     private ItemService itemService;
 
     @GetMapping(value = "/items/{ids}")
-    public RequestResult<List<Item>> getItemsBy(@PathVariable("ids")List<Long> ids){
-        List<Item> items = itemService.queryBy(ids);
-        return new RequestResult.Builder<List<Item>>().data(items).Ok();
+    public RequestResult<List<ItemPo>> getItemsBy(@PathVariable("ids")List<Long> ids){
+        List<ItemPo> itemPos = itemService.queryBy(ids);
+        return new RequestResult.Builder<List<ItemPo>>().data(itemPos).Ok();
     }
 
     @PutMapping(value = "/item")
-    public RequestResult decreaseStock(@RequestBody ItemDto itemDto){
+    public RequestResult decreaseStock(@RequestBody List<ItemStockDo> itemStockDos){
 
         return new RequestResult.Builder<>().Ok();
     }

@@ -2,7 +2,7 @@ package com.pd.goods.mapper.entity;
 
 import java.util.Date;
 
-public class ItemCat {
+public class ItemCatPo {
     private Long id;
 
     private Long parentId;

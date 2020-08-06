@@ -33,7 +33,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
-        <table tableName="tb_item" domainObjectName="Item"/>
-        <table tableName="tb_item_cat" domainObjectName="ItemCat"/>
+        <table tableName="tb_item" domainObjectName="ItemPo"/>
+        <table tableName="tb_item_cat" domainObjectName="ItemCatPo"/>
     </context>
 </generatorConfiguration>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pd.goods.mapper.persistence.ItemCatMapper">
-  <resultMap id="BaseResultMap" type="com.pd.goods.mapper.entity.ItemCat">
+  <resultMap id="BaseResultMap" type="com.pd.goods.mapper.entity.ItemCatPo">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="parent_id" jdbcType="BIGINT" property="parentId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -104,7 +104,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.pd.goods.mapper.entity.ItemCat">
+  <insert id="insert" parameterType="com.pd.goods.mapper.entity.ItemCatPo">
     insert into tb_item_cat (id, parent_id, name, 
       status, sort_order, is_parent, 
       icon, remark, created, 
@@ -114,7 +114,7 @@
       #{icon,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
       #{updated,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.pd.goods.mapper.entity.ItemCat">
+  <insert id="insertSelective" parameterType="com.pd.goods.mapper.entity.ItemCatPo">
     insert into tb_item_cat
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -241,7 +241,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pd.goods.mapper.entity.ItemCat">
+  <update id="updateByPrimaryKeySelective" parameterType="com.pd.goods.mapper.entity.ItemCatPo">
     update tb_item_cat
     <set>
       <if test="parentId != null">
@@ -274,7 +274,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pd.goods.mapper.entity.ItemCat">
+  <update id="updateByPrimaryKey" parameterType="com.pd.goods.mapper.entity.ItemCatPo">
     update tb_item_cat
     set parent_id = #{parentId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},

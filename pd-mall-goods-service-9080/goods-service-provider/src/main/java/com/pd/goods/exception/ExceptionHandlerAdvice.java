@@ -1,7 +1,6 @@
-package com.pd.goods.controller;
+package com.pd.goods.exception;
 
-import com.netflix.ribbon.proxy.annotation.Http;
-import com.pd.goods.exception.ValidException;
+import com.pd.exception.ValidException;
 import com.pd.result.RequestResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;

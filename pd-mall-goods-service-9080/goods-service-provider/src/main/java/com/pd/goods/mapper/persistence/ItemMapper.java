@@ -1,11 +1,13 @@
 package com.pd.goods.mapper.persistence;
 
-import com.pd.goods.mapper.entity.Item;
+import com.pd.goods.domian.ItemStockDo;
+import com.pd.goods.mapper.entity.ItemPo;
 import com.pd.goods.mapper.entity.ItemExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Mapper
 public interface ItemMapper {
@@ -15,21 +17,23 @@ public interface ItemMapper {
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(Item record);
+    int insert(ItemPo record);
 
-    int insertSelective(Item record);
+    int insertSelective(ItemPo record);
 
-    List<Item> selectByExample(ItemExample example);
+    List<ItemPo> selectByExample(ItemExample example);
 
-    Item selectByPrimaryKey(Long id);
+    ItemPo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Item record, @Param("example") ItemExample example);
+    int updateByExampleSelective(@Param("record") ItemPo record, @Param("example") ItemExample example);
 
-    int updateByExample(@Param("record") Item record, @Param("example") ItemExample example);
+    int updateByExample(@Param("record") ItemPo record, @Param("example") ItemExample example);
 
-    int updateByPrimaryKeySelective(Item record);
+    int updateByPrimaryKeySelective(ItemPo record);
 
-    int updateByPrimaryKey(Item record);
+    int updateByPrimaryKey(ItemPo record);
 
-    List<Item> selectStockForUpdate(@Param("ids")List<Long> ids);
+    List<ItemPo> selectStockForUpdate(@Param("ids")List<Long> ids);
+
+    Integer reduction(@Param("record")ItemPo record);
 }
