@@ -12,7 +12,7 @@
   <artifactId>goods-service-api</artifactId>
   <version>1.0</version>
 
-  <name>goods-service-api</name>
+  <name>pd-mall-goods-service-api</name>
 
   <dependencies>
     <dependency>

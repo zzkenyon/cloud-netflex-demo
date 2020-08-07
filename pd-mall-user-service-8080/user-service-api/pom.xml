@@ -5,26 +5,23 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <artifactId>spring-cloud-netflix-demo</artifactId>
-    <groupId>com.pd</groupId>
+    <groupId>com.pd.user</groupId>
+    <artifactId>pd-mall-user-service-8080</artifactId>
     <version>1.0</version>
   </parent>
-  <groupId>com.pd.order</groupId>
-  <artifactId>pd-mall-order-service-9090</artifactId>
-  <packaging>pom</packaging>
+  <artifactId>user-service-api</artifactId>
   <version>1.0</version>
-  <modules>
-    <module>order-service-api</module>
-    <module>order-service-provider</module>
-  </modules>
-  <name>pd-mall-order-service-9090</name>
+
+  <name>pd-mall-user-service-api</name>
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
   </dependencies>
 

@@ -24,6 +24,12 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
+        - id: order-service
+          predicates:
+            - Path=/pd-mall/**
+          filters:
+            - StripPrefix=1
+          uri: lb://order-service
         - id: lb_route
           predicates:
             - Path=/lb/**
