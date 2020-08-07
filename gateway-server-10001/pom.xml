@@ -39,6 +39,15 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.72</version>
     </dependency>
+    <!--sleuth + zipkin 链路监控-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>

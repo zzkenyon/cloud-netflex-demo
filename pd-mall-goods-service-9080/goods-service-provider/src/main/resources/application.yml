@@ -6,8 +6,17 @@ spring:
     password: C!Fr0ShoW9Nu
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://10.0.12.76:9411/
 server:
   port: 9080
+
+logging:
+  level:
+    org.springframework.cloud.sleuth: debug
 
 mybatis:
   type-aliases-package: com.pd.goods.mapper.entitys

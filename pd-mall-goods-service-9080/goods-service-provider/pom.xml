@@ -60,6 +60,16 @@
       <version>1.0</version>
       <scope>compile</scope>
     </dependency>
+
+    <!--sleuth + zipkin 链路监控-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
