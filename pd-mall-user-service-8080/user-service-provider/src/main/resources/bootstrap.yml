@@ -1,24 +1,16 @@
 spring:
   profiles:
     active: dev
----
-spring:
-  profiles: prod
   application:
     name: user-service
   cloud:
     config:
-      uri: http://localhost:6001
-      label: master
-      profile: prod
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
 
----
-spring:
-  profiles: dev
-  application:
-    name: user-service
-  cloud:
-    config:
-      uri: http://localhost:6001
-      label: master
-      profile: dev
+

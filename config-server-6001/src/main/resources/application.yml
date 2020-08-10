@@ -1,2 +1,26 @@
 server:
   port: 6001
+spring:
+  profiles:
+    active:
+  application:
+    name: config-server  # 应用名称
+  rabbitmq:
+    host: 10.0.12.74
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zzkenyon/config-center.git
+          skipSslValidation: true
+          username: zzkenyon
+          password: pJp&Zzk3213
+          default-label: master
+          search-paths: config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
