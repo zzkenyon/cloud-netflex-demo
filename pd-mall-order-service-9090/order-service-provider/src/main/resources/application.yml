@@ -3,26 +3,17 @@ server:
 spring:
   application:
     name: order-service
-  sleuth:
-    sampler:
-      probability: 1.0
-  zipkin:
-    base-url: http://10.0.12.76:9411/
+#  sleuth:
+#    sampler:
+#     probability: 1.0
+#  zipkin:
+#    base-url: http://10.0.12.76:9411/
 
   datasource:
     url: jdbc:mysql://10.0.12.72:3306/pd_mall?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=UTC
     password: C!Fr0ShoW9Nu
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-    service-url:
-      defaultZone: http://localhost:7001/eureka/ #告诉服务提供者要把服务注册到哪儿
-  instance:
-    prefer-ip-address: true #显示客户端真实ip
 
 logging:
   level:

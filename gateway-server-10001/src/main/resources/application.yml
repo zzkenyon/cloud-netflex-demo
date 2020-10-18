@@ -1,14 +1,7 @@
+app:
+  env: demo
 server:
   port: 10001
-
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7001/eureka/
-  instance:
-    prefer-ip-address: true #显示客户端真实ip
-
 
 logging:
   level:
@@ -17,13 +10,11 @@ logging:
 spring:
   application:
     name: gateway-server
-
-  sleuth:
-    sampler:
-      probability: 1.0
-  zipkin:
-     base-url: http://10.0.12.76:9411/
-
+#  sleuth:
+#    sampler:
+#     probability: 1.0
+#  zipkin:
+#     base-url: http://10.0.12.76:9411/
   redis:
     host: 10.0.12.74
     port: 6379
@@ -35,6 +26,41 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
+        - id: ms-oauth2-service
+          predicates:
+            - Path=/passport/oauth/**
+          uri: lb://ms-oauth2-server-${app.env}
+
+        - id: api-dmp-task
+          predicates:
+            - Path=/dmp/task/**
+          uri: lb://srv-dmp-task-${app.env}
+
+        - id: api-dmp-hive
+          predicates:
+            - Path=/dmp/hive/**
+          uri: lb://srv-dmp-datasource-${app.env}
+
+        - id: api-dmp-datasource
+          predicates:
+            - Path=/dmp/datasources/**
+          uri: lb://srv-dmp-datasource-${app.env}
+
+        - id: api-dmp-model
+          predicates:
+            - Path=/dmp/model/**
+          uri: lb://srv-dmp-model-${app.env}
+
+        - id: api-dmp-manager
+          predicates:
+            - Path=/dmp/manager/**
+          uri: lb://srv-dmp-manager-${app.env}
+
+        - id: api-dmp-experiment
+          predicates:
+            - Path=/dmp/**
+          uri: lb://srv-dmp-experiment-${app.env}
+
         - id: order-service
           predicates:
             - Path=/pd-mall/**

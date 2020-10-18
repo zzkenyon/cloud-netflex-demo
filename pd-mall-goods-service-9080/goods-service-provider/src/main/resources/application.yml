@@ -20,8 +20,3 @@ logging:
 
 mybatis:
   type-aliases-package: com.pd.goods.mapper.entitys
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7001/eureka

@@ -8,13 +8,13 @@
   <packaging>pom</packaging>
   <version>1.0</version>
   <modules>
-    <module>eureka-server-7001</module>
-    <module>pd-mall-user-service-8080</module>
-    <module>pd-mall-order-service-9090</module>
     <module>gateway-server-10001</module>
-    <module>config-server-6001</module>
-    <module>pd-mall-goods-service-9080</module>
     <module>pd-mall-common</module>
+    <module>pd-mall-order-service-9090</module>
+    <module>pd-mall-goods-service-9080</module>
+
+    <module>eureka-server-7001</module>
+    <module>config-server-6001</module>
   </modules>
   <name>spring-cloud-netflix-demo</name>
 

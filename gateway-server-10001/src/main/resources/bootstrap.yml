@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        server-addr: 10.0.30.31:8848
+        file-extension: yaml
+        namespace: b0a87d99-fc2c-4023-a49b-db62b9c00c44
+      discovery:
+        server-addr: 10.0.30.31:8848
+        namespace: b0a87d99-fc2c-4023-a49b-db62b9c00c44

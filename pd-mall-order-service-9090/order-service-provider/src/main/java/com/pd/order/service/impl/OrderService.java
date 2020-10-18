@@ -1,6 +1,5 @@
 package com.pd.order.service.impl;
 
-import com.netflix.discovery.converters.Auto;
 import com.pd.exception.BizException;
 import com.pd.goods.clients.IGoodsFeignClient;
 import com.pd.goods.dto.ItemDto;
