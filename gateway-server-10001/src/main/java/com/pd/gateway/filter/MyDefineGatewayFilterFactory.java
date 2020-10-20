@@ -1,4 +1,4 @@
-package com.pd.gateway;
+package com.pd.gateway.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,13 +16,13 @@ import java.util.List;
  * @date 2020/10/18 20:40
  */
 @Component
-public class GpDefineGatewayFilterFactory extends AbstractGatewayFilterFactory<GpDefineGatewayFilterFactory.GpConfig> {
+public class MyDefineGatewayFilterFactory extends AbstractGatewayFilterFactory<MyDefineGatewayFilterFactory.GpConfig> {
 
     private static final String NAME_KEY="name";
 
-    Logger logger= LoggerFactory.getLogger(GpDefineGatewayFilterFactory.class);
+    Logger logger= LoggerFactory.getLogger(MyDefineGatewayFilterFactory.class);
 
-    public GpDefineGatewayFilterFactory() {
+    public MyDefineGatewayFilterFactory() {
         super(GpConfig.class);
     }
 
@@ -37,6 +37,7 @@ public class GpDefineGatewayFilterFactory extends AbstractGatewayFilterFactory<G
         return ((exchange,chain)->{
             logger.info("[pre] Filter Request, name:"+config.getName());
             //TODO
+            // 这句的意思是执行完过滤器连之后，执行Runnable中的逻辑，完了发射产生的Mono
             return chain.filter(exchange).then(Mono.fromRunnable(()->{
                 //TODO
                 logger.info("[post]: Response Filter");

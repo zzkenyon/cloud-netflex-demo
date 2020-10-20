@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author zhaozhengkang
  * @description
@@ -27,5 +29,11 @@ public class OrderController implements OrderServiceFeignClient {
         orderDto.validData(bindingResult);
         String orderId=service.createOrder(orderDto);
         return new RequestResult.Builder<>().data(orderId).Ok();
+    }
+
+    @Override
+    public RequestResult queryOrders() {
+        List<String> orderIds = service.queryIds();
+        return new RequestResult.Builder<>().data(orderIds).Ok();
     }
 }

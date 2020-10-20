@@ -92,4 +92,9 @@ public class OrderService  implements IOrderService {
         orderPoMapper.insert(tbOrder);
         return null;
     }
+
+    @Override
+    public List<String> queryIds() {
+        return orderPoMapper.queryIds();
+    }
 }

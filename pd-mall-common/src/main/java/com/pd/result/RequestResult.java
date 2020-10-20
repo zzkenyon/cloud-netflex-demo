@@ -36,10 +36,22 @@ public class RequestResult<T> {
         private T data;
 
         public Builder(){}
+
         public Builder<T> data(T data){
             this.data = data;
             return this;
         }
+
+        public Builder<T> code(int code){
+            this.code = code;
+            return this;
+        }
+
+        public Builder<T> meg(String msg){
+            this.msg = msg;
+            return this;
+        }
+
         public RequestResult<T> Ok(T data) {
             this.code = 200;
             this.msg = "success";

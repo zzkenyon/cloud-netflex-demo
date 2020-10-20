@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface OrderPoMapper {
@@ -30,4 +31,7 @@ public interface OrderPoMapper {
     int updateByPrimaryKeySelective(OrderPo record);
 
     int updateByPrimaryKey(OrderPo record);
+
+    @Select("SELECT order_id FROM tb_order")
+    List<String> queryIds();
 }

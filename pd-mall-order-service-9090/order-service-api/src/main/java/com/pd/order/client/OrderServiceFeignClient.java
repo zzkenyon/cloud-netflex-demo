@@ -6,6 +6,7 @@ import com.pd.result.RequestResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -21,4 +22,7 @@ public interface OrderServiceFeignClient{
 
     @PostMapping(value = "/order")
     RequestResult createOrder(@Validated @RequestBody OrderDto orderDto, BindingResult bindingResult);
+
+    @GetMapping(value = "/orders")
+    RequestResult queryOrders();
 }

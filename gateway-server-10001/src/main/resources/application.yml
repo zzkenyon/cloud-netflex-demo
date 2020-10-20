@@ -26,6 +26,13 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
+        - id: test
+          predicates:
+            - Path=/global
+          filters:
+            - MyDefine=zzk
+          uri: http://localhost:10001/hello
+
         - id: ms-oauth2-service
           predicates:
             - Path=/passport/oauth/**
@@ -66,6 +73,7 @@ spring:
             - Path=/pd-mall/**
           filters:
             - StripPrefix=1
+            - MyDefine=zzk
           uri: lb://order-service
         - id: lb_route
           predicates:
