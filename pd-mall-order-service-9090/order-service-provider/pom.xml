@@ -11,7 +11,7 @@
   <artifactId>order-service-provider</artifactId>
   <version>1.0</version>
 
-  <name>pd-mall-order-service-provider</name>
+  <name>order-service-provider</name>
 
   <dependencies>
     <dependency>
@@ -24,10 +24,10 @@
       <artifactId>goods-service-api</artifactId>
       <version>1.0</version>
     </dependency>
-<!--    <dependency>
+    <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency>-->
+    </dependency>
     <dependency>
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>

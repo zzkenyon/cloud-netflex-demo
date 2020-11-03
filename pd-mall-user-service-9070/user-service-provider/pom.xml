@@ -5,24 +5,26 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
+    <artifactId>pd-mall-user-service-9070</artifactId>
     <groupId>com.pd</groupId>
-    <artifactId>pd-mall-goods-service-9080</artifactId>
     <version>1.0</version>
   </parent>
-  <artifactId>goods-service-api</artifactId>
+
+  <artifactId>user-service-provider</artifactId>
   <version>1.0</version>
 
-  <name>goods-service-api</name>
-
+  <name>user-service-provider</name>
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-openfeign</artifactId>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
     </dependency>
+
     <dependency>
-        <groupId>com.pd</groupId>
-        <artifactId>pd-mall-common</artifactId>
-        <version>1.0</version>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session-data-redis</artifactId>
     </dependency>
   </dependencies>
 

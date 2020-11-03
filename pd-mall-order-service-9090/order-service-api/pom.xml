@@ -12,7 +12,7 @@
   <artifactId>order-service-api</artifactId>
   <version>1.0</version>
 
-  <name>pd-mall-order-service-api</name>
+  <name>order-service-api</name>
 
   <dependencies>
     <dependency>

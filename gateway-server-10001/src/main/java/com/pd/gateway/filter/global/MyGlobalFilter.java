@@ -13,7 +13,6 @@ import reactor.core.publisher.Mono;
  * @description
  * @date 2020/10/20 09:24
  */
-@Component
 @Slf4j
 public class MyGlobalFilter implements GlobalFilter, Ordered {
     @Override

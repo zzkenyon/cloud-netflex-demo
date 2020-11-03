@@ -21,7 +21,7 @@ import java.util.List;
 public interface OrderServiceFeignClient{
 
     @PostMapping(value = "/order")
-    RequestResult createOrder(@Validated @RequestBody OrderDto orderDto, BindingResult bindingResult);
+    RequestResult createOrder(@RequestBody OrderDto orderDto);
 
     @GetMapping(value = "/orders")
     RequestResult queryOrders();

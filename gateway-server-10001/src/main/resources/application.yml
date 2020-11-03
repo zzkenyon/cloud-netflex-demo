@@ -1,5 +1,7 @@
 app:
   env: demo
+  sso:
+    address:
 server:
   port: 10001
 
@@ -30,7 +32,6 @@ spring:
           predicates:
             - Path=/global
           filters:
-            - MyDefine=zzk
           uri: http://localhost:10001/hello
 
         - id: ms-oauth2-service
@@ -73,7 +74,6 @@ spring:
             - Path=/pd-mall/**
           filters:
             - StripPrefix=1
-            - MyDefine=zzk
           uri: lb://order-service
         - id: lb_route
           predicates:

@@ -16,7 +16,7 @@
   </parent>
   <artifactId>pd-mall-goods-service-9080</artifactId>
   <version>1.0</version>
-  <name>pd-mall-goods-service-9080</name>
+  <name>goods-service-9080</name>
   <dependencies>
 
   </dependencies>

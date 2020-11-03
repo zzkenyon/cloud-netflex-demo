@@ -25,7 +25,6 @@ import java.util.List;
  * 过滤指定的ip地址
  * ip黑名单可以存在redis中
  */
-@Component
 @Order(0)
 public class IpCheckFilter implements GlobalFilter {
     @Override

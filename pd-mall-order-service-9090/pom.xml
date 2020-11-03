@@ -17,7 +17,7 @@
     <module>order-service-api</module>
     <module>order-service-provider</module>
   </modules>
-  <name>pd-mall-order-service-9090</name>
+  <name>order-service-9090</name>
 
   <dependencies>
     <dependency>

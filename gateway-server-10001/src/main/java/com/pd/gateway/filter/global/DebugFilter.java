@@ -21,7 +21,6 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.G
 /**
  * 可以在a/b测试中使用这样的过滤器
  */
-@Component
 @Order(101010)
 public class DebugFilter implements GlobalFilter {
 

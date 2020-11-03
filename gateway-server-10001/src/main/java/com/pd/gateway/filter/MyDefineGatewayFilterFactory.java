@@ -15,7 +15,6 @@ import java.util.List;
  * @description
  * @date 2020/10/18 20:40
  */
-@Component
 public class MyDefineGatewayFilterFactory extends AbstractGatewayFilterFactory<MyDefineGatewayFilterFactory.GpConfig> {
 
     private static final String NAME_KEY="name";
