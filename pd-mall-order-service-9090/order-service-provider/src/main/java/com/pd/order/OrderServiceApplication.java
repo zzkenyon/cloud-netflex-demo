@@ -11,7 +11,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * Hello world!
  *
  */
-@SpringBootApplication(exclude = {ServiceRegistryAutoConfiguration.class,AutoServiceRegistrationAutoConfiguration.class})
+//@SpringBootApplication(exclude = {ServiceRegistryAutoConfiguration.class,AutoServiceRegistrationAutoConfiguration.class})
+@SpringBootApplication
 @EnableFeignClients(basePackages = {"com.pd.client"})
 @EnableDiscoveryClient
 public class OrderServiceApplication {

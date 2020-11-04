@@ -23,9 +23,9 @@ public class OrderController implements IOrderFeignClient {
     private OrderService service;
 
     @Override
-    public RequestResult createOrder(OrderDto orderDto) {
+    public RequestResult<String> createOrder(OrderDto orderDto) {
         String orderId=service.createOrder(orderDto);
-        return new RequestResult.Builder<>().data(orderId).Ok();
+        return new RequestResult.Builder<String>().data(orderId).Ok();
     }
 
     @Override

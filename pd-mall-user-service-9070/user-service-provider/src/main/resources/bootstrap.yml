@@ -10,7 +10,7 @@ spring:
         server-addr: 10.0.12.76:8848
         namespace: d3223c57-61ed-427b-8b7d-335dffd188d1
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7001/eureka/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/

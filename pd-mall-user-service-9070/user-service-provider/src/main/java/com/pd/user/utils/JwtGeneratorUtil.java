@@ -2,10 +2,8 @@ package com.pd.user.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import com.pd.exception.BizException;
+import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -52,8 +50,13 @@ public class JwtGeneratorUtil {
      * @param token
      * @return
      */
-    public static Claims parseToken(String token){
-        Jws<Claims> claimsJws = Jwts.parser().setSigningKey(getKeyInstance()).parseClaimsJws(token);
+    public static Claims parseToken(String token) throws BizException{
+        Jws<Claims> claimsJws;
+        try {
+            claimsJws = Jwts.parser().setSigningKey(getKeyInstance()).parseClaimsJws(token);
+        }catch (MalformedJwtException e){
+            throw new BizException("[user-service] token不正确导致解析失败");
+        }
         return claimsJws.getBody();
     }
 

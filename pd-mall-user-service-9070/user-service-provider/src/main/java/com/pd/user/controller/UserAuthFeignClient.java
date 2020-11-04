@@ -1,6 +1,7 @@
 package com.pd.user.controller;
 
 import com.pd.client.IUserAuthFeignClient;
+import com.pd.exception.BizException;
 import com.pd.exception.ValidException;
 import com.pd.result.RequestResult;
 import com.pd.user.utils.JwtGeneratorUtil;
@@ -24,17 +25,19 @@ public class UserAuthFeignClient implements IUserAuthFeignClient {
      * @return
      */
     @Override
-    public RequestResult validToken(String token) {
+    public RequestResult<String> validToken(String token) {
         if(StringUtils.isBlank(token)){
             throw new ValidException("token为空");
         }
         try{
             Claims claims = JwtGeneratorUtil.parseToken(token);
-            return new RequestResult.Builder().data(claims.get("uid").toString()).Ok();
-        }catch (ExpiredJwtException e){
-            return new RequestResult.Builder().buildCustomize("token已经过期");
+            return new RequestResult.Builder<String>().data(claims.get("uid").toString()).Ok();
+        }catch (BizException e){
+            return new RequestResult.Builder<String>().buildCustomize(401,e.getMessage());
+        } catch (ExpiredJwtException e){
+            return new RequestResult.Builder<String>().buildCustomize(401,"[user-service] token已经过期");
         }catch (SignatureException e){
-            return new RequestResult.Builder().buildCustomize("签名校验失败");
+            return new RequestResult.Builder<String>().buildCustomize(401,"[user-service] 签名校验失败");
         }
     }
 }

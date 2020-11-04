@@ -22,7 +22,7 @@ import java.nio.charset.StandardCharsets;
  * @description
  * @date 2020/10/27 10:58
  */
-@Component
+
 public class LoginCheckFilter implements GlobalFilter, Ordered {
 
     @Override

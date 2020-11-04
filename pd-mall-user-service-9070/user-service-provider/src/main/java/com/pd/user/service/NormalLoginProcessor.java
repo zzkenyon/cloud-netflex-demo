@@ -1,6 +1,5 @@
 package com.pd.user.service;
 
-import com.netflix.discovery.converters.Auto;
 import com.pd.exception.BizException;
 import com.pd.exception.ValidException;
 import com.pd.user.dto.AuthLoginDto;

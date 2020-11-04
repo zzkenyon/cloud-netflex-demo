@@ -89,7 +89,7 @@ public class OrderService  implements IOrderService {
         tbOrder.setUserId(1000000l);
         tbOrder.setOrderId(orderId);
         orderPoMapper.insert(tbOrder);
-        return null;
+        return orderId;
     }
 
     @Override
