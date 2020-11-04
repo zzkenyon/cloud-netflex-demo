@@ -1,7 +1,7 @@
 package com.pd.order.service.impl;
 
 import com.pd.exception.BizException;
-import com.pd.goods.clients.IGoodsFeignClient;
+import com.pd.client.IGoodsFeignClient;
 import com.pd.goods.dto.ItemDto;
 import com.pd.goods.dto.ItemStockDto;
 import com.pd.goods.vo.ItemVo;
@@ -14,7 +14,6 @@ import com.pd.order.mapper.persistence.OrderPoMapper;
 import com.pd.order.service.IOrderService;
 import com.pd.result.RequestResult;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

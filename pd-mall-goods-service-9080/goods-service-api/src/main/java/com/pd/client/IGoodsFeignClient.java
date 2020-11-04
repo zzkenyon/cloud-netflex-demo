@@ -1,4 +1,4 @@
-package com.pd.goods.clients;
+package com.pd.client;
 
 import com.pd.goods.dto.ItemStockDto;
 import com.pd.goods.vo.ItemVo;

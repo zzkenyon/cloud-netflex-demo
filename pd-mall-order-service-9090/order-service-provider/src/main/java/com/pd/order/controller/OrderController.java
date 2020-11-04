@@ -1,13 +1,11 @@
 package com.pd.order.controller;
 
-import com.pd.order.converter.OrderConverter;
-import com.pd.order.client.OrderServiceFeignClient;
+import com.pd.client.IOrderFeignClient;
 import com.pd.order.dto.OrderDto;
 import com.pd.order.service.impl.OrderService;
 import com.pd.result.RequestResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,7 +17,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
-public class OrderController implements OrderServiceFeignClient {
+public class OrderController implements IOrderFeignClient {
 
     @Autowired
     private OrderService service;

@@ -1,6 +1,6 @@
 package com.pd.goods.controller;
 
-import com.pd.goods.clients.IGoodsFeignClient;
+import com.pd.client.IGoodsFeignClient;
 import com.pd.goods.converter.ItemConverter;
 import com.pd.goods.domian.ItemStockDo;
 import com.pd.goods.dto.ItemStockDto;
