@@ -1,7 +1,14 @@
 server:
   port: 9070
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://10.0.12.72:3306/pd_mall?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=UTC
+    password: C!Fr0ShoW9Nu
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7001/eureka/
+  redis:
+    host: 10.0.12.74
+    port: 6379
